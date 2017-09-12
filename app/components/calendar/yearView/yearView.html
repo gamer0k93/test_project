@@ -1,0 +1,59 @@
+<div class="content layout-year">
+    <h2 class="year">{{yearViewCtrl.tempDate.getFullYear()}}</h2>
+    <div class="clearfix"></div>
+
+    <div class="layout-name">
+        <i ng-click="yearViewCtrl.decrementYear()" class="arrow arrow-left fa fa-chevron-circle-left" aria-hidden="true"></i>
+        <span>
+             {{yearViewCtrl.tempDate.getFullYear()}}   
+            </span>
+        <i ng-click="yearViewCtrl.incrementYear()" class="arrow arrow-right fa fa-chevron-circle-right" aria-hidden="true"></i>
+    </div>
+
+    <div class="months-set">
+        <div class="month col-xs-12 col-lg-4" ng-repeat="month in yearViewCtrl.calendarData track by $index">
+            <div class="layout-switch">
+                <span ui-sref="calendarState.monthView({
+                                    date: {
+                                        year: yearViewCtrl.tempDate.getFullYear(),
+                                        month: $index
+                                    }
+                                })">Select month<i class="fa fa-th-large"></i></span>
+            </div>
+            <div class="month-name">{{yearViewCtrl.req._const.monthsNames[$index]}}</div>
+            <ul class="weekday">
+                <li>
+                    <span>Mon</span>
+                </li>
+                <li>
+                    <span>Tue</span>
+                </li>
+                <li>
+                    <span>Wed</span>
+                </li>
+                <li>
+                    <span>Thu</span>
+                </li>
+                <li>
+                    <span>Fri</span>
+                </li>
+                <li>
+                    <span>Sat</span>
+                </li>
+                <li>
+                    <span>Sun</span>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            <ul class="days">
+                <li ng-repeat="day in month track by $index">
+                    <a ng-class="{'disabled': day.disabled}">
+                        <!-- If date consists some events -->
+                        <span class="events-label" ng-show="day.events.length > 0">{{day.events.length}}</span> {{day.date}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

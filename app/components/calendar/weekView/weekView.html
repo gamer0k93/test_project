@@ -1,0 +1,60 @@
+<div class="content layout-week">
+    <div class="layout-switch">
+        Switch to:
+        <span ui-sref="calendarState.monthView({
+                            date: {
+                                year: weekViewCtrl.tempDate.getFullYear(),
+                                month: weekViewCtrl.tempDate.getMonth()
+                            }
+                        })">month view<i class="fa fa-th-large"></i></span>
+        <span ui-sref="calendarState.yearView({date: {year: weekViewCtrl.tempDate.getFullYear()}})">year view<i class="fa fa-th"></i></span>
+    </div>
+
+    <h2 class="year">{{weekViewCtrl.tempDate.getFullYear()}}</h2>
+    <div class="clearfix"></div>
+
+    <div class="week">
+        <div class="layout-name">
+            <i ng-click="weekViewCtrl.decrementWeek()" class="arrow arrow-left fa fa-chevron-circle-left" aria-hidden="true"></i>
+            <span>
+            {{weekViewCtrl.calendarData.days[0].date}}
+            {{weekViewCtrl.req._const.monthsNames[weekViewCtrl.calendarData.days[0].month]}} 
+            - 
+            {{weekViewCtrl.calendarData.days[6].date}}
+            {{weekViewCtrl.req._const.monthsNames[weekViewCtrl.calendarData.days[6].month]}}    
+            </span>
+            <i ng-click="weekViewCtrl.incrementWeek()" class="arrow arrow-right fa fa-chevron-circle-right" aria-hidden="true"></i>
+        </div>
+
+        <div class="clearfix"></div>
+        <ul class="days">
+            <li ng-repeat="day in weekViewCtrl.calendarData.days track by $index">
+                <div class="name">
+                    <b>{{weekViewCtrl.req._const.daysShortcuts[day.day]}}</b>
+                    <br> {{day.date}} {{weekViewCtrl.req._const.monthsNames[day.month]}}
+
+                </div>
+                <div class="events">
+                    <ul class="events-set" ng-show="day.events.length > 0">
+                        <li ng-repeat="event in day.events" class="event-box">
+                            <div class="time">
+                                <span>From {{event.startTime | date : 'HH:mm'}} till {{event.endTime | date : 'HH:mm'}}</span>
+                            </div>
+                            <div class="title">{{event.title}}</div>
+                            <div class="btns">
+                                <button ng-click="weekViewCtrl.editEvent(event)" class="btn">Edit event</button>
+                                <button ng-click="weekViewCtrl.removeEvent(event)" class="btn">Remove event</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div ng-show="day.events.length == 0" class="no-events-found">
+                        There are no events for this date yet
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
