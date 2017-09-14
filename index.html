@@ -10,8 +10,20 @@
     <!--  app styles -->
     <link rel="stylesheet" href="/build/app.css">
 </head>
+<header>
+    <div class="container text-center">
+        <div class="btn-group btn-group-lg" role="group">
+            <a ui-sref="homePageState.blankSubpage" class="btn btn-primary">Home page</a>
+            <a ui-sref="formPageState" class="btn btn-primary">Form page</a>
+            <a ui-sref="thirdPageState" class="btn btn-primary">Third page</a>
+        </div>
+    </div>
+</header>
 <body>
-    <ui-view></ui-view>    
+    <div class="container text-center">
+        <ui-view></ui-view> 
+    </div>   
+
     <!-- vendor scripts -->
     <script src="/build/appVendor.js"></script>
     <!-- app scripts -->

@@ -11,7 +11,11 @@
                     templateUrl: './app/components/homePage/homePage.html',
                     controller: 'homePageController',
                     controllerAs: 'homePageCtrl',
-                    resolve: {}
+                    resolve: {
+                        testResolve: ()=>{
+                            console.log("Launching a common resolve");
+                        }
+                    }
                 });
         });
 

@@ -1,1 +1,20 @@
-secondSubpage
+<div class="secondSubpage">
+    <h2>Second Subpage</h2>
+     
+    (directive)
+    <h3>Reserve image appears when the main returns 404</h3>
+
+    <label>Main image URL</label><br>
+    <input type="text" ng-model="secondSubpageCtrl.mainImageURL" 
+            ng-value="secondSubpageCtrl.mainImageURL"/><br>
+
+    <label>Reserve image URL</label><br>
+    <input type="text" ng-model="secondSubpageCtrl.reserveImageURL" 
+            ng-value="secondSubpageCtrl.reserveImageURL"/><br><br>
+
+
+     <img ng-src="{{secondSubpageCtrl.mainImageURL}}" 
+        reserve-src="{{secondSubpageCtrl.reserveImageURL}}"/>
+
+        
+</div> 

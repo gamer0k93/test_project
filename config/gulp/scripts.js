@@ -8,10 +8,14 @@ const
 
 gulp.task('scripts', () => {
     return gulp.src(config.dev.js)
-        /** Concat app files */
+        /**
+         * Concat app files
+         */
         .pipe(concat(config.build.js))
         .on('error', config.swallowError)
-        /** Setting up babel */
+        /**
+         * Setting up babel
+         */
         .pipe(babel({
             presets: ['es2015'],
             compact: true

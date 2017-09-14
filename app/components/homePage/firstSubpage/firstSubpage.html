@@ -1,1 +1,15 @@
-firstSubpage
+<div class="firstSubpage">
+    <h2>First Subpage</h2>
+    
+    (factory)
+    <div class="changing-numbers">
+        <a class="btn btn-success" ng-click="firstSubpageCtrl.decrementNumber()"><</a>
+        <div class="numbers">
+            <span ng-repeat="i in [0,1,2,3,4,5,6,7,8]">
+                {{firstSubpageCtrl.getNumber() + (i - 4)}} 
+            </span>
+        </div>
+        <a class="btn btn-success" ng-click="firstSubpageCtrl.incrementNumber()">></a>
+    </div>
+
+</div> 

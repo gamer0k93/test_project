@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-    function homePageController() {
-        
+    class HomePageController {
+        constructor() {}
     }
 
     angular
         .module('app.homePage')
-        .controller('homePageController', homePageController);
+        .controller('homePageController', HomePageController);
 })();

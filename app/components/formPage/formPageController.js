@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-    class formPageController {
-        
+    class FormPageController {
+        constructor() {}
     }
 
     angular
         .module('app.formPage')
-        .controller('formPageController', formPageController);
+        .controller('formPageController', FormPageController);
 })();

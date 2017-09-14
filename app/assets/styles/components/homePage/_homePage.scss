@@ -1,0 +1,19 @@
+.homePage{
+    .changing-numbers{
+        .btn, .numbers{
+            display: inline;
+
+            span{
+                @for $i from 1 through 9 {
+                    &:nth-child(#{$i}){ 
+                        $ii: 0;
+                        @if $i < 6 { $ii: $i } 
+                        @else { $ii: 10 - $i }  
+                        font-size: #{$ii}em;
+                        opacity: $ii * 0.2;
+                    }
+                }
+            }
+        }
+    } 
+}

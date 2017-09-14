@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('app.calendar.monthView', []);
+        .module('app.thirdPage', []);
         
 })();
